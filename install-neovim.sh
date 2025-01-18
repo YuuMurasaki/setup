@@ -6,7 +6,7 @@ install_prerequisites() {
     if command -v apt-get >/dev/null 2>&1; then
         apt-get update && apt-get install -y git ninja-build gettext cmake curl build-essential
     elif command -v apk >/dev/null 2>&1; then
-        apk update && apk add alpine-sdk cmake coreutils gettext-tiny-dev ccache ninja-build
+        apk update && apk add apk add build-base cmake coreutils curl gettext-tiny-dev
     else
         echo "Can't find a supported package manager." && exit 1
     fi
