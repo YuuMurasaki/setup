@@ -43,7 +43,7 @@ apk add pipewire wireplumber
 apk add pipewire-jack pipewire-pulse pipewire-alsa
 
 # The most POSIX-compliant shell in the world
-# Edit /etc/passwd to change default shell from 'ash' --> 'yash'
+# Edit /etc/passwd to change default shell from '/bin/ash' --> '/usr/bin/yash'
 apk add yash
 
 # Man pages
@@ -54,6 +54,9 @@ apk add fzf ripgrep fd
 
 # File manager
 apk add lf trash-cli
+
+# Text editor
+apk add neovim
 
 # Terminal multiplexer
 #apk add tmux
@@ -74,7 +77,7 @@ apk add nsxiv maim
 
 # Web browsers
 apk add librewolf
-apk add nss-dev adwaita-icon-theme hicolor-icon-theme
+apk add adwaita-icon-theme hicolor-icon-theme
 
 # Youtube client
 apk add freetube
@@ -85,7 +88,7 @@ apk add freetube
 
 # Fonts
 apk add freetype-dev fontconfig-dev
-apk add font-iosevka
+apk add font-iosevka-base
 apk add font-jetbrains-mono-nerd
 #apk add font-freefont
 #apk add font-liberation

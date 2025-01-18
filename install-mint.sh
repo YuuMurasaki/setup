@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 
 # Update system and repositories, add repos
 curl -fsSL https://apt.fury.io/wez/gpg.key | sudo gpg --yes --dearmor -o /etc/apt/keyrings/wezterm-fury.gpg
