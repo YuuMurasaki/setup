@@ -17,7 +17,7 @@ build_neovim() {
 
     INSTALL_DIR="/usr/local/software"
     [ ! -d "$INSTALL_DIR" ] && mkdir -p "$INSTALL_DIR"
-    
+
     cd "$INSTALL_DIR" && git clone https://github.com/neovim/neovim && cd neovim || exit
     make CMAKE_BUILD_TYPE=RelWithDebInfo
     make install
