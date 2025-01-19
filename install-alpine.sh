@@ -23,7 +23,7 @@ apk add xf86-video-vboxvideo # For Virtualbox
 
 # Libraries
 apk add libx11-dev libxft-dev libxinerama-dev libxrandr-dev
-apk add ncurses ncurses-dev linux-headers
+apk add ncurses linux-headers
 
 # Tools
 apk add alpine-sdk curl git make stow
