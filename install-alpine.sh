@@ -12,7 +12,6 @@ apk update
 apk upgrade --available
 
 # Xorg 
-# NOTE: To make Xorg work as normal user you need to add user to these groups: video, input
 setup-xorg-base xorg-server xinit xrandr xsetroot
 apk add xclip xwallpaper unclutter-xfixes
 
@@ -38,7 +37,6 @@ rc-update add dbus default
 #apk add iwd
 
 # Sound
-# NOTE: add user : audio
 apk add pipewire wireplumber
 apk add pipewire-jack pipewire-pulse pipewire-alsa
 
@@ -101,12 +99,13 @@ apk add font-jetbrains-mono-nerd
 # Vietnamese
 #apk add fcitx5 fcitx5-unikey fcitx5-configtool
 
-### Making home directories
-mkdir -p $HOME/Downloads
-mkdir -p $HOME/Documents
-mkdir -p $HOME/Music
-mkdir -p $HOME/Videos
-mkdir -p $HOME/Pictures/Screenshots
+# Setup
+touch /home/yuu/.profile && echo ". $HOME/.config/shell/profile" > /home/yuu/.profile
+touch /home/yuu/.yashrc && echo ". $HOME/.config/yash/rc" > /home/yuu/.yashrc
+
+# Add user to groups
+adduser yuu audio
+adduser yuu input
 
 # REBOOT
 reboot
