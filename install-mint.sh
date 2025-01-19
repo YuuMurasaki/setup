@@ -11,7 +11,10 @@ sudo apt-get update
 ##########################
 
 # Programming tools
-sudo apt-get install -y tcc gcc clang clang-tools luarocks
+sudo apt-get install -y tcc gcc clang clang-tools clang-format clang-tidy
+sudo apt-get install -y lua5.4 luarocks
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+source $HOME/.cargo/env
 
 # Terminal emulator
 sudo apt-get install -y wezterm
@@ -19,30 +22,24 @@ sudo apt-get install -y wezterm
 # Cli tools
 sudo apt-get install -y stow git
 sudo apt-get install -y htop stress opendoas
-sudo apt-get install -y eza trash-cli ripgrep
-sudo apt-get install -y mpv nsxiv mupdf cmus lf vis tmux fzf
+sudo apt-get install -y eza trash-cli ripgrep fd-find
+sudo apt-get install -y mpv nsxiv lf tmux fzf
 sudo apt-get install -y ninja-build gettext make cmake unzip curl wget build-essential
-
-# Zip, Tar, etc
-sudo apt-get install -y tar 7zip unzip zip
 
 # Vietnamese
 sudo apt-get install -y fcitx5 fcitx5-unikey fcitx5-configtool
 
 # Install fonts
-sudo apt-get install -y fonts-freefont-otf
-sudo apt-get install -y fonts-liberation
-sudo apt-get install -y fonts-roboto
-sudo apt-get install -y fonts-dejavu
-sudo apt-get install -y fonts-noto-core
-sudo apt-get install -y fonts-noto-extra
+sudo apt-get install -y fonts-freefont-otf fonts-liberation fonts-roboto fonts-dejavu fonts-linuxlibertine
+sudo apt-get install -y fonts-noto-core fonts-noto-extra fonts-noto-mono fonts-noto-ui-core fonts-noto-ui-extra
 sudo apt-get install -y fonts-linuxlibertine
+sudo apt-get install -y fonts-crosextra-carlito fonts-crosextra-caladea
 
 # Icons
 sudo apt-get install -y papirus-icon-theme
 
 # Large software
-sudo apt-get install -y keepassxc geany
+sudo apt-get install -y keepassxc geany audacious
 
 ############################
 #### BUILDING SOFTWARES ####

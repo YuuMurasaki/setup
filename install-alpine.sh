@@ -11,7 +11,7 @@
 apk update
 apk upgrade --available
 
-# Xorg 
+# Xorg
 setup-xorg-base xorg-server xinit xrandr xsetroot
 apk add xclip xwallpaper unclutter-xfixes
 
@@ -60,9 +60,6 @@ apk add neovim
 
 # System monitor
 apk add htop
-
-# Music player
-#apk add cmus
 
 # Media
 apk add nsxiv maim
