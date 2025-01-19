@@ -23,7 +23,7 @@ apk add xf86-video-vboxvideo # For Virtualbox
 
 # Libraries
 apk add libx11-dev libxft-dev libxinerama-dev libxrandr-dev
-apk add ncurses-dev linux-headers
+apk add ncurses ncurses-dev linux-headers
 
 # Tools
 apk add alpine-sdk curl git make stow
@@ -37,8 +37,7 @@ rc-update add dbus default
 #apk add iwd
 
 # Sound
-apk add pipewire wireplumber
-apk add pipewire-jack pipewire-pulse pipewire-alsa
+apk add pipewire wireplumber pipewire-pulse
 
 # The most POSIX-compliant shell in the world
 # Edit /etc/passwd to change default shell from '/bin/ash' --> '/usr/bin/yash'
@@ -100,8 +99,8 @@ apk add font-jetbrains-mono-nerd
 #apk add fcitx5 fcitx5-unikey fcitx5-configtool
 
 # Setup
-touch /home/yuu/.profile && echo ". $HOME/.config/shell/profile" > /home/yuu/.profile
-touch /home/yuu/.yashrc && echo ". $HOME/.config/yash/rc" > /home/yuu/.yashrc
+touch /home/yuu/.profile && echo ". /home/yuu/.config/shell/profile" > /home/yuu/.profile
+touch /home/yuu/.yashrc && echo ". /home/yuu/.config/yash/rc" > /home/yuu/.yashrc
 
 # Add user to groups
 adduser yuu audio
@@ -110,6 +109,7 @@ adduser yuu input
 # Clone my suckless
 cd /root && git clone https://github.com/YuuMurasaki/suckless.git
 cd /home/yuu && git clone https://github.com/YuuMurasaki/dotfiles.git
+chown -R yuu: /home/yuu/dotfiles
 
 # REBOOT
 reboot
