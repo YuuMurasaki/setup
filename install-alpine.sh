@@ -107,5 +107,9 @@ touch /home/yuu/.yashrc && echo ". $HOME/.config/yash/rc" > /home/yuu/.yashrc
 adduser yuu audio
 adduser yuu input
 
+# Clone my suckless
+cd /root && git clone https://github.com/YuuMurasaki/suckless.git
+cd /home/yuu && git clone https://github.com/YuuMurasaki/dotfiles.git
+
 # REBOOT
 reboot
