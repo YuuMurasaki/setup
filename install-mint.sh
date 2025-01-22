@@ -35,9 +35,9 @@ sudo apt-get install -y fcitx5 fcitx5-unikey fcitx5-configtool
 
 # Install fonts
 sudo apt-get install -y fonts-hack fonts-firacode fonts-fira-mono
-sudo apt-get install -y fonts-freefont-otf fonts-liberation fonts-roboto fonts-dejavu fonts-linuxlibertine
+sudo apt-get install -y fonts-freefont-otf fonts-roboto fonts-dejavu
 sudo apt-get install -y fonts-noto-core fonts-noto-extra fonts-noto-ui-core fonts-noto-ui-extra
-sudo apt-get install -y fonts-linuxlibertine
+sudo apt-get install -y fonts-linuxlibertine fonts-liberation
 sudo apt-get install -y fonts-crosextra-carlito fonts-crosextra-caladea
 
 # Icons
@@ -46,7 +46,7 @@ sudo apt-get install -y papirus-icon-theme
 # Large software
 sudo apt-get install -y keepassxc
 sudo apt-get install -y audacious audacious-plugins
-sudo apt-get install -y geany geany-plugins
+sudo apt-get install -y codeblocks codeblocks-common
 
 ############################
 #### BUILDING SOFTWARES ####
