@@ -15,7 +15,6 @@ sudo apt-get update
 sudo apt-get install -y libx11-dev libxft-dev libxinerama-dev libxrandr-dev
 sudo apt-get install -y libxi-dev libgl1-mesa-dev libglu1-mesa-dev libxext-dev libxcursor-dev
 
-
 # Programming tools
 sudo apt-get install -y tcc gcc build-essential gdb clang clang-tools clang-format clang-tidy
 sudo apt-get install -y clang clang-tools clang-format clang-tidy llvm lldb
@@ -23,7 +22,7 @@ sudo apt-get install -y ninja-build gettext make cmake unzip curl wget
 sudo apt-get install -y virtualbox-7.1
 
 # Cli tools
-sudo apt-get install -y wezterm yash
+sudo apt-get install -y wezterm
 sudo apt-get install -y htop stress-ng
 sudo apt-get install -y git stow lf trash-cli eza
 sudo apt-get install -y fd-find fzf ripgrep xwallpaper
@@ -34,9 +33,11 @@ sudo apt-get install -y maim imagemagick
 sudo apt-get install -y fcitx5 fcitx5-unikey fcitx5-configtool
 
 # Install fonts
-sudo apt-get install -y fonts-hack fonts-firacode fonts-fira-mono
+sudo apt-get install -y fonts-recommended
+sudo apt-get install -y fonts-hack fonts-firacode fonts-jetbrains-mono
+sudo apt-get install -y fonts-font-awesome
 sudo apt-get install -y fonts-freefont-otf fonts-roboto fonts-dejavu
-sudo apt-get install -y fonts-noto-core fonts-noto-extra fonts-noto-ui-core fonts-noto-ui-extra
+sudo apt-get install -y fonts-noto fonts-noto-core fonts-noto-extra fonts-noto-ui-core fonts-noto-ui-extra
 sudo apt-get install -y fonts-linuxlibertine fonts-liberation
 sudo apt-get install -y fonts-crosextra-carlito fonts-crosextra-caladea
 
@@ -46,7 +47,7 @@ sudo apt-get install -y papirus-icon-theme
 # Large software
 sudo apt-get install -y keepassxc
 sudo apt-get install -y audacious audacious-plugins
-sudo apt-get install -y codeblocks codeblocks-common
+sudo apt-get install -y geany geany-plugins
 
 ############################
 #### BUILDING SOFTWARES ####
@@ -68,10 +69,6 @@ wget --trust-server-names https://mullvad.net/en/download/browser/linux-x86_64/l
 
 ### Starship prompt
 #curl -sS https://starship.rs/install.sh | sh
-
-# Setup environment
-echo ". /home/yuu/.config/shell/profile" > /home/yuu/.profile
-echo ". /home/yuu/.config/bash/rc" > /home/yuu/.bashrc
 
 # Clean up
 sudo apt-get autoremove -y
