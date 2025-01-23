@@ -33,7 +33,7 @@ sudo apt-get install -y maim imagemagick
 # Install fonts
 sudo apt-get install -y ubuntu-restricted-extras
 sudo apt-get install -y fonts-recommended
-sudo apt-get install -y fonts-hack fonts-firacode fonts-jetbrains-mono
+sudo apt-get install -y fonts-hack fonts-firacode
 sudo apt-get install -y fonts-font-awesome
 sudo apt-get install -y fonts-freefont-otf fonts-roboto fonts-dejavu
 sudo apt-get install -y fonts-noto fonts-noto-core fonts-noto-extra fonts-noto-ui-core fonts-noto-ui-extra
@@ -61,6 +61,11 @@ cd $HOME/Downloads
 git clone https://github.com/neovim/neovim
 #cd neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo
 #sudo make install
+
+# Install fonts
+cd $HOME/Downloads
+git clone https://github.com/sahibjotsaggu/San-Francisco-Pro-Fonts.git
+curl -L -o JetBrainsMono.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/JetBrainsMono.zip
 
 # Mullvad browser
 wget --trust-server-names https://mullvad.net/en/download/browser/linux-x86_64/latest -P ~/Downloads
