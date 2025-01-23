@@ -18,6 +18,7 @@ sudo apt-get install -y libxi-dev libgl1-mesa-dev libglu1-mesa-dev libxext-dev l
 sudo apt-get install -y tcc gcc build-essential gdb clang clang-tools clang-format clang-tidy
 sudo apt-get install -y clang clang-tools clang-format clang-tidy llvm lldb
 sudo apt-get install -y lua5.1 luarocks
+sudo apt-get install -y python3.12-venv
 sudo apt-get install -y ninja-build gettext make cmake unzip curl wget
 
 # Cli tools
