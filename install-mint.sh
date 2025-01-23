@@ -17,13 +17,14 @@ sudo apt-get install -y libxi-dev libgl1-mesa-dev libglu1-mesa-dev libxext-dev l
 # Programming tools
 sudo apt-get install -y tcc gcc build-essential gdb clang clang-tools clang-format clang-tidy
 sudo apt-get install -y clang clang-tools clang-format clang-tidy llvm lldb
+sudo apt-get install -y lua5.1 luarocks
 sudo apt-get install -y ninja-build gettext make cmake unzip curl wget
 
 # Cli tools
 sudo apt-get install -y wezterm
 sudo apt-get install -y htop stress-ng
 sudo apt-get install -y git stow lf trash-cli eza
-sudo apt-get install -y fd-find fzf ripgrep xwallpaper
+sudo apt-get install -y fd-find fzf ripgrep xwallpaper xclip
 sudo apt-get install -y mpv nsxiv zathura zathura-poppler
 sudo apt-get install -y maim imagemagick
 
