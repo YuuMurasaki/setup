@@ -6,10 +6,8 @@ user_pref("app.update.auto", false);
 // Disable Firefox accounts:
 user_pref("identity.fxaccounts.enabled", false);
 
-// Disable Pocket:
+// Disable pocket and screenshot
 user_pref("extensions.pocket.enabled", false);
-
-// Disable screenshot extension
 user_pref("extensions.screenshots.disabled", true);
 
 // Disable crap in the search bar:
@@ -62,13 +60,9 @@ user_pref("browser.toolbars.bookmarks.visibility", "never");
 // Enforce certificate pinning
 user_pref("security.cert_pinning.enforcement_level", 2);
 
-// Delete all browsing data on shutdown
-user_pref("privacy.sanitize.sanitizeOnShutdown", true);
-user_pref("privacy.clearOnShutdown_v2.cache", true);
-user_pref("privacy.clearOnShutdown_v2.cookiesAndStorage", true);
-user_pref("privacy.clearOnShutdown_v2.browsingHistoryAndDownloads", true);
-user_pref("privacy.clearOnShutdown_v2.downloads", true); // [HIDDEN]
-user_pref("privacy.clearOnShutdown_v2.formdata", true);
+// Disable container tabs
+user_pref("privacy.userContext.enabled", false);
 
-// After crashes or restarts, do not save extra session data
-user_pref("browser.sessionstore.privacy_level", 2);
+// Ask before quitting Firefox
+user_pref("browser.warnOnQuit", false);
+user_pref("browser.warnOnQuitShortcut", false);
