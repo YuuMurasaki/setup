@@ -54,3 +54,4 @@ user_pref("media.peerconnection.enabled", false);
 
 // Disable bookmarks
 user_pref("browser.bookmarks.enabled", false);
+user_pref("browser.toolbars.bookmarks.visibility", never);
