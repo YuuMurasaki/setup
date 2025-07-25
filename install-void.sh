@@ -12,17 +12,16 @@
 # ln -s /usr/share/alsa/alsa.conf.d/50-pipewire.conf /etc/alsa/conf.d
 # ln -s /usr/share/alsa/alsa.conf.d/99-pipewire-default.conf /etc/alsa/conf.d
 ###################################################################################
-# Disable 'dhcpcd', 'wpa_supplicant' before enable 'NetworkManager'
-###################################################################################
-# Edit '/etc/default/grub'
-# change loglevel=5, timeout=3
+# Enable NetworkManager, rtkit
+# ln -s /etc/sv/NetworkManager/ /var/service/
+# ln -s /etc/sv/rtkit/ /var/service/
 ###################################################################################
 
 xbps-install -Syu
 xbps-install -y xorg xinit xrandr xsetroot xcompmgr xdotool xset xclip xwallpaper xwininfo xprop
 xbps-install -y vulkan-loader mesa-vulkan-intel unclutter-xfixes
 xbps-install -y base-devel libX11-devel libXft-devel libXinerama-devel libXrandr-devel ncurses
-xbps-install -y freetype-devel fontconfig-devel xdg-utils xdg-user-dirs ntfs-3g
+xbps-install -y freetype-devel fontconfig-devel xdg-utils xdg-user-dirs
 xbps-install -y dbus dbus-x11 pam_rundir NetworkManager gnupg pinentry-gtk
 xbps-install -y pipewire wireplumber rtkit alsa-pipewire
 xbps-install -y git oath-toolkit make curl wget patch gcc lua luarocks LuaJIT
