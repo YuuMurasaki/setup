@@ -25,7 +25,7 @@ xbps-install -y base-devel libX11-devel libXft-devel libXinerama-devel libXrandr
 xbps-install -y freetype-devel fontconfig-devel xdg-utils xdg-user-dirs
 xbps-install -y dbus dbus-x11 pam_rundir NetworkManager gnupg pinentry-gtk
 xbps-install -y pipewire wireplumber rtkit alsa-pipewire
-xbps-install -y git oath-toolkit curl wget lua luarocks LuaJIT hugo
+xbps-install -y git oath-toolkit curl wget lua luarocks LuaJIT
 xbps-install -y stow slop zathura-pdf-poppler ImageMagick ffmpeg
 xbps-install -y fzf eza rsync tar zip unzip
 xbps-install -y font-iosevka freefont-ttf dejavu-fonts-ttf ttf-ubuntu-font-family
