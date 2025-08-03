@@ -44,8 +44,12 @@ permit nopass :wheel cmd umount
 " > /etc/doas.conf
 chmod 400 /etc/doas.conf
 
+# Setup ips
+curl "https://raw.githubusercontent.com/LukeSmithxyz/etc/refs/heads/master/ips" >> /etc/hosts
+
 # Setup pipewire
 mkdir -p /etc/pipewire/pipewire.conf.d
 mkdir -p /etc/alsa/conf.d
 
+# Reboot
 reboot
