@@ -6,9 +6,10 @@ user_pref("app.update.auto", false);
 // Disable Firefox accounts:
 user_pref("identity.fxaccounts.enabled", false);
 
-// Disable pocket and screenshot
+// Disable pocket, screenshot and picture-in-picture
 user_pref("extensions.pocket.enabled", false);
 user_pref("extensions.screenshots.disabled", true);
+user_pref("media.videocontrols.picture-in-picture.enabled", false);
 
 // Disable crap in the search bar:
 user_pref("browser.urlbar.quicksuggest.enabled", false);
