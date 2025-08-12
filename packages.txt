@@ -55,6 +55,7 @@ noto-fonts-cjk-variable
 noto-fonts-ttf
 noto-fonts-ttf-extra
 noto-fonts-ttf-variable
+tmux
 neovim
 lf
 mpv
