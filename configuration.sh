@@ -41,4 +41,4 @@ echo "PipeWire setup complete."
 
 # Setup /etc/hosts
 curl -L "https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-social/hosts" > /etc/hosts
-curl -L "" >> /etc/hosts
+curl -L "https://raw.githubusercontent.com/YuuMurasaki/setup/refs/heads/master/ips" >> /etc/hosts
