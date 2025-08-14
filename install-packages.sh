@@ -32,10 +32,10 @@ install_dotfiles() {
 echo "Installing packages..."
 xbps-install -Syu
 TEMP=$(mktemp)
-curl -L "" > "$TEMP"
+curl -sL "https://raw.githubusercontent.com/YuuMurasaki/setup/master/files/packages.txt" > "$TEMP"
 while IFS= read -r package; do
     xbps-install -y "$package"
-done < packages.txt
+done < "$TEMP"
 
 gitmakeinstall https://github.com/YuuMurasaki/st.git
 gitmakeinstall https://github.com/YuuMurasaki/dwm.git

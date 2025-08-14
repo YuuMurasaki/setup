@@ -17,4 +17,4 @@ profile="$HOME/.mozilla/firefox/$name"
 curl -sL "https://raw.githubusercontent.com/arkenfox/user.js/master/user.js" > "$profile/user.js"
 
 # Add extra settings to user.js
-curl -sL "https://github.com/YuuMurasaki/setup/raw/refs/heads/master/extra.js" >> "$profile/user.js"
+curl -sL "https://raw.githubusercontent.com/YuuMurasaki/setup/refs/heads/master/files/extra.js" >> "$profile/user.js"

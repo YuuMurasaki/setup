@@ -40,5 +40,5 @@ ln -s /usr/share/alsa/alsa.conf.d/99-pipewire-default.conf /etc/alsa/conf.d
 echo "PipeWire setup complete."
 
 # Setup /etc/hosts
-curl -L "https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-social/hosts" > /etc/hosts
-curl -L "https://raw.githubusercontent.com/YuuMurasaki/setup/refs/heads/master/ips" >> /etc/hosts
+curl -sL "https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-social/hosts" > /etc/hosts
+curl -sL "https://raw.githubusercontent.com/YuuMurasaki/setup/refs/heads/master/files/ips" >> /etc/hosts
