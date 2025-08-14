@@ -1,47 +1,19 @@
 #!/bin/sh
 
-gitmakeinstall() {
-    echo "Cloning '$1'..."
-    local dir=$(mktemp -d)
-    git clone --depth 1 --single-branch --no-tags -q "$1" "$dir"
-    cd "$dir" || exit 1
-    make clean install >/dev/null 2>&1
-    rm -rf "$dir"
-    echo "Done!"
-}
-
-install_font() {
-    echo "Installing fonts..."
-    local dir=$(mktemp -d)
-    cd "$dir" || exit
-    curl -OLs "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.tar.xz"
-    tar -xf JetBrainsMono.tar.xz >/dev/null 2>&1
-    mv -- *.ttf /usr/share/fonts/TTF
-    rm -rf "$dir"
-    echo "Done!"
-}
-
-install_dotfiles() {
-    sudo -u "yuu" mkdir -p "/home/yuu/dotfiles"
-    sudo -u "yuu" \
-        git clone --single-branch --no-tags -q \
-        "https://github.com/YuuMurasaki/dotfiles.git" "/home/yuu/dotfiles"
-}
-
-# Main
-echo "Installing packages..."
 xbps-install -Syu
-TEMP=$(mktemp)
-curl -sL "https://raw.githubusercontent.com/YuuMurasaki/setup/master/files/packages.txt" > "$TEMP"
-while IFS= read -r package; do
-    xbps-install -y "$package"
-done < "$TEMP"
+xbps-install -y xorg-server xorg-apps xorg-input-drivers xorg-video-drivers
+xbps-install -y base-devel libX11-devel libXft-devel libXinerama-devel libXrandr-devel ncurses
+xbps-install -y vulkan-loader mesa-vulkan-intel freetype-devel fontconfig-devel
+xbps-install -y xcompmgr xdotool xclip xwallpaper unclutter-xfixes
+xbps-install -y exfat-utils xdg-utils xdg-user-dirs dbus dbus-x11
+xbps-install -y curl wget ImageMagick ffmpeg slop zathura-pdf-poppler man-db
+xbps-install -y NetworkManager pam_rundir pipewire wireplumber alsa-pipewire rtkit
+xbps-install -y stow fzf rsync tar zip unzip
+xbps-install -y font-iosevka freefont-ttf ttf-ubuntu-font-family liberation-fonts-ttf font-libertine-ttf font-awesome6
+xbps-install -y noto-fonts-emoji noto-fonts-cjk noto-fonts-cjk-variable noto-fonts-ttf noto-fonts-ttf-extra noto-fonts-ttf-variable
+xbps-install -y tmux neovim lf mpv opendoas nsxiv shotgun zathura
+xbps-install -y firefox keepassxc
 
-gitmakeinstall https://github.com/YuuMurasaki/st.git
-gitmakeinstall https://github.com/YuuMurasaki/dwm.git
-gitmakeinstall https://github.com/YuuMurasaki/dmenu.git
-
-install_font
-install_dotfiles
-
-reboot
+git clone --depth 1 --single-branch --no-tags -q https://github.com/YuuMurasaki/st.git
+git clone --depth 1 --single-branch --no-tags -q https://github.com/YuuMurasaki/dwm.git
+git clone --depth 1 --single-branch --no-tags -q https://github.com/YuuMurasaki/dmenu.git

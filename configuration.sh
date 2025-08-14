@@ -3,6 +3,7 @@
 # Enable sv services
 echo "Removing existing services..."
 rm -r /var/service/dhcpcd
+rm -r /var/service/dhcpcd-eth0
 rm -r /var/service/agetty-tty4
 rm -r /var/service/agetty-tty5
 rm -r /var/service/agetty-tty6
@@ -40,5 +41,11 @@ ln -s /usr/share/alsa/alsa.conf.d/99-pipewire-default.conf /etc/alsa/conf.d
 echo "PipeWire setup complete."
 
 # Setup /etc/hosts
+echo "Setting up /etc/hosts"
 curl -sL "https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-social/hosts" > /etc/hosts
 curl -sL "https://raw.githubusercontent.com/YuuMurasaki/setup/refs/heads/master/files/ips" >> /etc/hosts
+
+# Setup home directory
+echo "Setting up home"
+sudo -u "yuu" mkdir -p /home/yuu/.ssh
+sudo -u "yuu" mkdir -p /home/yuu/workspace/testing
