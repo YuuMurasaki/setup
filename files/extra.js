@@ -64,6 +64,6 @@ user_pref("security.cert_pinning.enforcement_level", 2);
 // Disable container tabs
 user_pref("privacy.userContext.enabled", false);
 
-// Ask before quitting Firefox
+// Quit without asking
 user_pref("browser.warnOnQuit", false);
 user_pref("browser.warnOnQuitShortcut", false);

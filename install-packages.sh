@@ -31,6 +31,8 @@ install_dotfiles() {
 # Main
 echo "Installing packages..."
 xbps-install -Syu
+TEMP=$(mktemp)
+curl -L "" > "$TEMP"
 while IFS= read -r package; do
     xbps-install -y "$package"
 done < packages.txt
