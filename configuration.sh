@@ -49,3 +49,8 @@ curl -sL "https://raw.githubusercontent.com/YuuMurasaki/setup/refs/heads/master/
 echo "Setting up home"
 sudo -u "yuu" mkdir -p /home/yuu/.ssh
 sudo -u "yuu" mkdir -p /home/yuu/workspace/testing
+sudo -u "yuu" mkdir -p /home/yuu/workspace/repos
+cd /home/yuu
+sudo -u "yuu" git clone --depth 1 "https://github.com/YuuMurasaki/dotfiles.git"
+cd /home/yuu/workspace/repos
+sudo -u "yuu" git clone --depth 1 "https://github.com/YuuMurasaki/setup.git"
