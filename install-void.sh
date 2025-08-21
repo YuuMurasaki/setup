@@ -22,6 +22,8 @@ git clone --depth 1 --single-branch --no-tags -q "https://github.com/YuuMurasaki
 sudo -u "yuu" mkdir -p /home/yuu/.ssh
 sudo -u "yuu" mkdir -p /home/yuu/workspace/testing
 sudo -u "yuu" mkdir -p /home/yuu/workspace/repos
+sudo -u "yuu" mkdir -p /home/yuu/pictures/screenshots
+sudo -u "yuu" mkdir -p /home/yuu/music
 
 cd /home/yuu
 sudo -u "yuu" git clone --depth 1 -q "https://github.com/YuuMurasaki/dotfiles.git"
