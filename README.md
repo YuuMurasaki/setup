@@ -39,3 +39,11 @@ stow .
 ./ffsetup.sh
 ./gitsetup.sh
 ```
+# Update
+Need to keep an eye on updates
++ update system
+```
+xbps-install -Syu
+```
++ update /etc/hosts
++ update firefox user.js
