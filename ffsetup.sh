@@ -9,12 +9,9 @@ sleep 3
 kill "$firefox_pid"
 
 # Grab profile
-name=$(ls /home/yuu/.mozilla/firefox/ | grep "default-default")
-profile="$HOME/.mozilla/firefox/$name"
+profile="$HOME/.mozilla/firefox/*default-default*"
 [ ! -d "$profile" ] && exit 1
 
-# Install Arkenfox user.js
+# User.js modify
 curl -sL "https://raw.githubusercontent.com/arkenfox/user.js/master/user.js" > "$profile/user.js"
-
-# Add extra settings to user.js
 curl -sL "https://raw.githubusercontent.com/YuuMurasaki/setup/refs/heads/master/files/extra.js" >> "$profile/user.js"
