@@ -10,7 +10,7 @@ sudo apt-get install -y fonts-linuxlibertine fonts-liberation
 sudo apt-get install -y fonts-crosextra-carlito fonts-crosextra-caladea
 
 # Software
-sudo apt-get install -y keepassxc audacious
+sudo apt-get install -y keepassxc audacious gedit
 
 cd "$HOME/Downloads"
 wget --quiet https://mullvad.net/en/download/browser/linux-x86_64/latest
