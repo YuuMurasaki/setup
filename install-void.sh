@@ -2,6 +2,7 @@
 
 xbps-install -Syu
 xbps-install -y xorg-server xorg-apps xorg-input-drivers xorg-video-drivers ncurses
+#xbps-install -y vulkan-loader mesa-vulkan-intel
 xbps-install -y base-devel libX11-devel libXft-devel libXinerama-devel libXrandr-devel
 xbps-install -y freetype-devel fontconfig-devel NetworkManager
 xbps-install -y exfat-utils xdg-user-dirs dbus dbus-x11 pam_rundir
