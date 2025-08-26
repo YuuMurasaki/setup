@@ -27,7 +27,7 @@ permit nopass :wheel cmd reboot
 permit nopass :wheel cmd mount
 permit nopass :wheel cmd umount
 " > /etc/doas.conf
-chmod 400 /etc/doas.conf
+chmod 444 /etc/doas.conf
 echo "doas configuration complete."
 
 # Setup pipewire
@@ -43,3 +43,7 @@ echo "PipeWire setup complete."
 # Setup /etc/hosts
 echo "Setting up /etc/hosts"
 curl -sL "https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-porn-social/hosts" > /etc/hosts
+
+# Prevent login as root
+echo "PermitRootLogin no" >> /etc/ssh/ssh_config
+passwd -l root
