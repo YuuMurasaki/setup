@@ -28,22 +28,19 @@ permit nopass :wheel cmd mount
 permit nopass :wheel cmd umount
 " > /etc/doas.conf
 chmod 444 /etc/doas.conf
-echo "doas configuration complete."
 
 # Setup pipewire
-echo "Setting up PipeWire..."
+echo "Configuring PipeWire..."
 mkdir -p /etc/pipewire/pipewire.conf.d
 mkdir -p /etc/alsa/conf.d
 ln -s /usr/share/examples/wireplumber/10-wireplumber.conf /etc/pipewire/pipewire.conf.d/
 ln -s /usr/share/examples/pipewire/20-pipewire-pulse.conf /etc/pipewire/pipewire.conf.d/
 ln -s /usr/share/alsa/alsa.conf.d/50-pipewire.conf /etc/alsa/conf.d
 ln -s /usr/share/alsa/alsa.conf.d/99-pipewire-default.conf /etc/alsa/conf.d
-echo "PipeWire setup complete."
 
 # Setup /etc/hosts
 echo "Setting up /etc/hosts"
 curl -sL "https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-porn-social/hosts" > /etc/hosts
 
 # Prevent login as root
-echo "PermitRootLogin no" >> /etc/ssh/ssh_config
-passwd -l root
+passwd -ld root
