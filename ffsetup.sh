@@ -9,8 +9,8 @@ sleep 3
 kill "$firefox_pid"
 
 # Grab profile
-profile="$HOME/.mozilla/firefox/*default-default*"
-[ ! -d "$profile" ] && exit 1
+cd "$HOME/.mozilla/firefox"
+profile=$(ls | grep "default-default")
 
 # User.js modify
 curl -sL "https://raw.githubusercontent.com/arkenfox/user.js/master/user.js" > "$profile/user.js"
