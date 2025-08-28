@@ -30,4 +30,3 @@ sudo -u "yuu" git clone --depth 1 -q "https://github.com/YuuMurasaki/dotfiles.gi
 
 cd /home/yuu/workspace/repos
 sudo -u "yuu" git clone --depth 1 -q "https://github.com/YuuMurasaki/setup.git"
-sudo -u "yuu" git clone --depth 1 -q "https://github.com/YuuMurasaki/sites.git"
