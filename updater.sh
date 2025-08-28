@@ -1,6 +1,6 @@
 #!/bin/sh
 
-sudo su
+# Update script, switch to root user to run this script
 
 if command -v xbps-install > /dev/null; then
     xbps-install -Syu
