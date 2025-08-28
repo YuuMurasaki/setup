@@ -39,7 +39,6 @@ cd /home/yuu/dotfiles
 stow .
 ```
 10. Setup home directory
-+ Put wallpaper to ~/.local/share/wallpaper/wallpaper.png
 + Run these scripts as normal user
 ```
 ./ffsetup.sh
