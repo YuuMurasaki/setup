@@ -12,10 +12,10 @@ xbps-install -y stow fzf rsync tar zip unzip lf
 xbps-install -y font-iosevka ttf-ubuntu-font-family font-awesome6
 xbps-install -y noto-fonts-ttf noto-fonts-cjk noto-fonts-emoji
 xbps-install -y noto-fonts-ttf-extra noto-fonts-cjk-variable noto-fonts-ttf-variable
+xbps-install -y liberation-fonts-ttf font-libertine-ttf freefont-ttf
 xbps-install -y tmux neovim mpv nsxiv zathura opendoas
 xbps-install -y firefox keepassxc
 #xbps-install -y vulkan-loader mesa-vulkan-intel slop shotgun
-#xbps-install -y liberation-fonts-ttf font-libertine-ttf freefont-ttf
 
 cd /tmp
 git clone --depth 1 --single-branch --no-tags -q "https://github.com/YuuMurasaki/st.git"
