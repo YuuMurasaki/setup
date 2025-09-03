@@ -29,6 +29,18 @@ permit nopass :wheel cmd umount
 " > /etc/doas.conf
 chmod 444 /etc/doas.conf
 
+# Setup GRUB
+echo "Configuring GRUB..."
+touch /etc/default/grub
+echo "
+GRUB_DEFAULT=0
+GRUB_HIDDEN_TIMEOUT=0
+GRUB_TIMEOUT=0
+GRUB_CMDLINE_LINUX_DEFAULT="loglevel=4"
+" > /etc/default/grub
+chmod 444 /etc/default/grub
+update-grub
+
 # Setup pipewire
 echo "Configuring PipeWire..."
 mkdir -p /etc/pipewire/pipewire.conf.d
