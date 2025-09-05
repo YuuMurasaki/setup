@@ -3,51 +3,38 @@
 # Use booster instead of dracut-------------------------
 xbps-alternatives -s booster
 
-printf "
-ignorepkg=sudo
-ignorepkg=dracut
-" > /etc/xbps.d/ignore.conf
+printf "ignorepkg=sudo
+ignorepkg=dracut" > /etc/xbps.d/ignore.conf
 
 xbps-remove -RF sudo dracut
 xbps-remove -Oo
 
 # Blacklist kernel module-------------------------------
-printf "
-blacklist bluetooth
+printf "blacklist bluetooth
 blacklist uvcvideo
 blacklist snd_hda_intel
 blacklist snd_pcsp
-blacklist pcspkr
-" > /etc/modprobe.d/blacklist.conf
-chmod 444 /etc/modprobe.d/blacklist.conf
+blacklist pcspkr" > /etc/modprobe.d/blacklist.conf
 
 # Setup doas--------------------------------------------
 echo "Configuring doas..."
-printf "
-permit persist :wheel
+printf "permit persist :wheel
 permit nopass :wheel cmd poweroff
 permit nopass :wheel cmd reboot
 permit nopass :wheel cmd mount
-permit nopass :wheel cmd umount
-" > /etc/doas.conf
-chmod 444 /etc/doas.conf
+permit nopass :wheel cmd umount" > /etc/doas.conf
 
 # Setup GRUB--------------------------------------------
 echo "Configuring GRUB..."
-printf '
-GRUB_DEFAULT=0
+printf 'GRUB_DEFAULT=0
 GRUB_TIMEOUT=0
 GRUB_HIDDEN_TIMEOUT=0
-GRUB_CMDLINE_LINUX_DEFAULT="loglevel=4"
-' > /etc/default/grub
-chmod 444 /etc/default/grub
+GRUB_CMDLINE_LINUX_DEFAULT="loglevel=4"' > /etc/default/grub
 update-grub
 
 # Setup $XDG_RUNTIME_DIR--------------------------------
 echo "Setting up XDG_RUNTIME_DIR..."
-printf "
--session	optional	pam_rundir.so
-" >> /etc/pam.d/login
+printf "-session	optional	pam_rundir.so" >> /etc/pam.d/login
 
 # Enable sv services------------------------------------
 echo "Removing existing services..."

@@ -5,4 +5,4 @@ mkdir -p "$FONTDIR"
 cd "$FONTDIR" || exit
 
 curl -OLs "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.tar.xz"
-tar -xJf JetBrainsMono.tar.xz >/dev/null 2>&1
+tar -xJf JetBrainsMono.tar.xz

@@ -4,9 +4,40 @@
 + Have a guide just in case I forget how to set things up.
 
 # Guide
-## Groups
-When install void linux, put yourself in these groups:
-`wheel`, `tty`, `disk`, `audio`, `video`, `storage`, `network`, `input`, `plugdev`, `users`.
+## During Void Installer
+
+### Partitions
+
+| Size   | Mount Point | Type        |
+|--------|-------------|-------------|
+| 512 MB | /boot/efi   | vfat        |
+| 4 GB   | -           | linux swap  |
+| Rest   | /           | ext4        |
+
+### User Groups
+
+Put yourself in these groups:
+
+- **wheel**: Administrative privileges
+- **tty**: Access to TTY
+- **disk**: Disk management permissions
+- **audio**: Audio device access
+- **video**: Video device access
+- **storage**: Access to storage devices
+- **network**: Network access
+- **input**: Input device access
+- **plugdev**: Access to removable devices
+- **users**: General user group
+
+### Services
+
+Enable these services:
+
+- **dbus**: Inter-process communication
+- **rtkit**: Manages audio
+- **sshd**: SSH daemon
+- **uuidd**: Generates UUID
+- **NetworkManager**: Manages network
 
 ## Post installation
 1. Login as root and update system
@@ -33,29 +64,15 @@ reboot
 ```
 ./configuration.sh
 ```
-7. Install nerd fonts
-```
-./fontsetup.sh
-```
-8. Exit root and login as normal user
-9. Dotfiles go brrr
+7. Reboot and login as normal user
+8. Dotfiles go brrr
 ```
 cd /home/yuu/dotfiles
 stow .
 ```
-10. Setup home directory
+9. Finish
 ```
+./fontsetup.sh
 ./ffsetup.sh
 ./gitsetup.sh
 ```
-# Update
-Need to keep an eye on updates
-+ Update system
-```
-xbps-install -Syu
-```
-+ Update firefox user.js
-```
-./ffsetup.sh
-```
-+ Update /etc/hosts

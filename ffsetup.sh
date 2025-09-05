@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Firefox Setup Script
+# Firefox setup script
 
 # Run Firefox headless to generate a profile
 firefox --headless >/dev/null 2>&1 &
