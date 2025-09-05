@@ -1,6 +1,55 @@
 #!/bin/sh
 
-# Enable sv services
+# Use booster instead of dracut-------------------------
+xbps-alternatives -s booster
+
+printf "
+ignorepkg=sudo
+ignorepkg=dracut
+" > /etc/xbps.d/ignore.conf
+
+xbps-remove -RF sudo dracut
+xbps-remove -Oo
+
+# Blacklist kernel module-------------------------------
+printf "
+blacklist bluetooth
+blacklist uvcvideo
+blacklist snd_hda_intel
+blacklist snd_pcsp
+blacklist pcspkr
+" > /etc/modprobe.d/blacklist.conf
+chmod 444 /etc/modprobe.d/blacklist.conf
+
+# Setup doas--------------------------------------------
+echo "Configuring doas..."
+printf "
+permit persist :wheel
+permit nopass :wheel cmd poweroff
+permit nopass :wheel cmd reboot
+permit nopass :wheel cmd mount
+permit nopass :wheel cmd umount
+" > /etc/doas.conf
+chmod 444 /etc/doas.conf
+
+# Setup GRUB--------------------------------------------
+echo "Configuring GRUB..."
+printf '
+GRUB_DEFAULT=0
+GRUB_TIMEOUT=0
+GRUB_HIDDEN_TIMEOUT=0
+GRUB_CMDLINE_LINUX_DEFAULT="loglevel=4"
+' > /etc/default/grub
+chmod 444 /etc/default/grub
+update-grub
+
+# Setup $XDG_RUNTIME_DIR--------------------------------
+echo "Setting up XDG_RUNTIME_DIR..."
+printf "
+-session	optional	pam_rundir.so
+" >> /etc/pam.d/login
+
+# Enable sv services------------------------------------
 echo "Removing existing services..."
 rm -r /var/service/dhcpcd
 rm -r /var/service/dhcpcd-eth0
@@ -13,35 +62,7 @@ ln -s /etc/sv/NetworkManager/ /var/service/
 ln -s /etc/sv/rtkit/ /var/service/
 ln -s /etc/sv/dbus/ /var/service/
 
-# Setup $XDG_RUNTIME_DIR
-echo "Setting up XDG_RUNTIME_DIR..."
-echo "-session    optional    pam_rundir.so" >> /etc/pam.d/login
-
-# Setup doas
-echo "Configuring doas..."
-touch /etc/doas.conf
-echo "
-permit persist :wheel
-permit nopass :wheel cmd poweroff
-permit nopass :wheel cmd reboot
-permit nopass :wheel cmd mount
-permit nopass :wheel cmd umount
-" > /etc/doas.conf
-chmod 444 /etc/doas.conf
-
-# Setup GRUB
-echo "Configuring GRUB..."
-touch /etc/default/grub
-echo "
-GRUB_DEFAULT=0
-GRUB_HIDDEN_TIMEOUT=0
-GRUB_TIMEOUT=0
-GRUB_CMDLINE_LINUX_DEFAULT="loglevel=4"
-" > /etc/default/grub
-chmod 444 /etc/default/grub
-update-grub
-
-# Setup pipewire
+# Setup pipewire----------------------------------------
 echo "Configuring PipeWire..."
 mkdir -p /etc/pipewire/pipewire.conf.d
 mkdir -p /etc/alsa/conf.d
@@ -50,10 +71,10 @@ ln -s /usr/share/examples/pipewire/20-pipewire-pulse.conf /etc/pipewire/pipewire
 ln -s /usr/share/alsa/alsa.conf.d/50-pipewire.conf /etc/alsa/conf.d
 ln -s /usr/share/alsa/alsa.conf.d/99-pipewire-default.conf /etc/alsa/conf.d
 
-# Setup /etc/hosts
+# Setup /etc/hosts--------------------------------------
 echo "Configuring /etc/hosts"
 curl -sL "https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-porn-social/hosts" > /etc/hosts
 
-# Prevent login as root
+# Prevent login as root---------------------------------
 echo "Remove root password"
 passwd -ld root

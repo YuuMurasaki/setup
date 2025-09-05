@@ -4,6 +4,11 @@
 + Have a guide just in case I forget how to set things up.
 
 # Guide
+## Groups
+When install void linux, put yourself in these groups:
+`wheel`, `tty`, `disk`, `audio`, `video`, `storage`, `network`, `input`, `plugdev`, `users`.
+
+## Post installation
 1. Login as root and update system
 ```
 xbps-update -Syu
@@ -20,17 +25,17 @@ cd setup
 ./install-void.sh
 ```
 4. Compile suckless tools
-5. Install nerd fonts
-```
-./fontsetup.sh
-```
-6. Reboot
+5. Reboot
 ```
 reboot
 ```
-7. Login as root again and run configuration file
+6. Login as root again and run configuration file
 ```
 ./configuration.sh
+```
+7. Install nerd fonts
+```
+./fontsetup.sh
 ```
 8. Exit root and login as normal user
 9. Dotfiles go brrr
@@ -39,7 +44,6 @@ cd /home/yuu/dotfiles
 stow .
 ```
 10. Setup home directory
-+ Run these scripts as normal user
 ```
 ./ffsetup.sh
 ./gitsetup.sh

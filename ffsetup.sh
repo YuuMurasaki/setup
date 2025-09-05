@@ -15,3 +15,6 @@ profile=$(ls | grep "default-default")
 # User.js modify
 curl -sL "https://raw.githubusercontent.com/arkenfox/user.js/master/user.js" > "$profile/user.js"
 curl -sL "https://raw.githubusercontent.com/YuuMurasaki/setup/refs/heads/master/files/extra.js" >> "$profile/user.js"
+
+# For extension, I use
+# uBlock-origin and localCDN
