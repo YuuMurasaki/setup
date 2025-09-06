@@ -1,20 +1,21 @@
 #!/bin/sh
 
-# Use booster instead of dracut-------------------------
-xbps-alternatives -s booster
-
-printf "ignorepkg=sudo
-ignorepkg=dracut" > /etc/xbps.d/ignore.conf
-
-xbps-remove -RF sudo dracut
+# Use doas----------------------------------------------
+printf "ignorepkg=sudo" > /etc/xbps.d/ignore.conf
+xbps-remove -RF sudo
 xbps-remove -Oo
 
 # Blacklist kernel module-------------------------------
-printf "blacklist bluetooth
-blacklist uvcvideo
-blacklist snd_hda_intel
+printf "blacklist uvcvideo
+blacklist chsc_sch
+blacklist hisax
+blacklist i8xx_tco
+blacklist hisax_fcpcipnp
 blacklist snd_pcsp
-blacklist pcspkr" > /etc/modprobe.d/blacklist.conf
+blacklist pcspkr
+
+blacklist bluetooth
+install bluetooth /bin/true" > /etc/modprobe.d/blacklist.conf
 
 # Setup doas--------------------------------------------
 echo "Configuring doas..."

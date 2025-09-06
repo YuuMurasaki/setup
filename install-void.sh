@@ -3,8 +3,9 @@
 xbps-install -Syu
 xbps-install -y xorg-server xorg-apps xorg-input-drivers xorg-video-drivers
 xbps-install -y libX11-devel libXft-devel libXinerama-devel libXrandr-devel
-xbps-install -y exfat-utils base-devel dbus dbus-x11 pam_rundir
-xbps-install -y booster polkit ncurses NetworkManager
+xbps-install -y base-devel ncurses-devel
+xbps-install -y exfat-utils dbus dbus-x11 pam_rundir
+xbps-install -y polkit NetworkManager
 xbps-install -y pipewire wireplumber alsa-pipewire rtkit
 
 xbps-install -y freetype-devel fontconfig-devel
