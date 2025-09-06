@@ -15,6 +15,10 @@ install bluetooth /bin/true" > /etc/modprobe.d/blacklist.conf
 
 # Setup doas--------------------------------------------
 echo "Configuring doas..."
+
+printf "ignorepkg=sudo" > /etc/xbps.d/ignore.conf
+xbps-remove sudo
+
 printf "permit persist :wheel
 permit nopass :wheel cmd poweroff
 permit nopass :wheel cmd reboot
