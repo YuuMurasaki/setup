@@ -7,6 +7,7 @@ blacklist hisax
 blacklist i8xx_tco
 blacklist hisax_fcpcipnp
 blacklist snd_pcsp
+blacklist snd_hda_codec_hdmi
 blacklist pcspkr
 blacklist bluetooth
 
