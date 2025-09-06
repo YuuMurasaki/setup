@@ -1,10 +1,5 @@
 #!/bin/sh
 
-# Use doas----------------------------------------------
-printf "ignorepkg=sudo" > /etc/xbps.d/ignore.conf
-xbps-remove -RF sudo
-xbps-remove -Oo
-
 # Blacklist kernel module-------------------------------
 printf "blacklist uvcvideo
 blacklist chsc_sch
@@ -13,8 +8,8 @@ blacklist i8xx_tco
 blacklist hisax_fcpcipnp
 blacklist snd_pcsp
 blacklist pcspkr
-
 blacklist bluetooth
+
 install bluetooth /bin/true" > /etc/modprobe.d/blacklist.conf
 
 # Setup doas--------------------------------------------
