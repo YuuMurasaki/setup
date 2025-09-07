@@ -18,6 +18,7 @@ echo "Configuring doas..."
 
 printf "ignorepkg=sudo" > /etc/xbps.d/ignore.conf
 xbps-remove sudo
+xbps-remove -Oo
 
 printf "permit persist :wheel
 permit nopass :wheel cmd poweroff
