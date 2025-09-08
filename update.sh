@@ -11,17 +11,4 @@ xbps-install -Syu
 curl -sL "https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-porn-social/hosts" > /etc/hosts
 
 # TRIM the system
-fstrim /
-
-# system reset
-printf "1. Restart the system\n2. Shutdown the system\n"
-printf "Choose an option: "
-read -r choice
-
-if [ "$choice" -eq 1 ]; then
-    shutdown -r now
-elif [ "$choice" -eq 2 ]; then
-    shutdown -h now
-else
-    exit 0
-fi
+fstrim --verbose /
