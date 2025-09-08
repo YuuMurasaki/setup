@@ -4,8 +4,7 @@ xbps-install -Syu
 xbps-install -y xorg-server xorg-apps xorg-input-drivers xorg-video-drivers
 xbps-install -y libX11-devel libXft-devel libXinerama-devel libXrandr-devel
 xbps-install -y base-devel ncurses-devel
-xbps-install -y exfat-utils dbus dbus-x11 pam_rundir
-xbps-install -y polkit NetworkManager
+xbps-install -y dbus pam_rundir NetworkManager
 xbps-install -y pipewire wireplumber alsa-pipewire rtkit
 
 xbps-install -y freetype-devel fontconfig-devel
@@ -22,8 +21,9 @@ xbps-install -y tmux neovim lf fzf ripgrep
 
 xbps-install -y firefox keepassxc
 
-#xbps-install -y intel-video-accel vulkan-loader mesa-dri mesa-vulkan-intel mesa-vaapi mesa-vdpau
-#xbps-install -y slop shotgun xdg-user-dirs
+#xbps-install -y intel-video-accel vulkan-loader
+#xbps-install -y mesa-dri mesa-vulkan-intel mesa-vaapi mesa-vdpau
+#xbps-install -y slop shotgun xdg-user-dirs exfat-utils
 
 cd /tmp
 git clone --depth 1 --single-branch --no-tags -q "https://github.com/YuuMurasaki/st.git"
