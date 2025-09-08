@@ -7,4 +7,5 @@ curl -OLs "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetB
 tar -xJf JetBrainsMono.tar.xz
 
 FONT_DIR="/usr/share/fonts/TTF/"
+mkdir -p "$FONT_DIR"
 mv -- *.ttf "$FONT_DIR"
