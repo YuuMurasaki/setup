@@ -8,25 +8,20 @@
 
 ### Partitions
 
-| Size   | Mount Point | Type        |
-|--------|-------------|-------------|
-| 512 MB | /boot/efi   | vfat        |
-| 4 GB   | -           | linux swap  |
-| Rest   | /           | ext4        |
+| Size      | Mount Point   | Type        |
+|-----------|---------------|-------------|
+| 512 MB    | /boot/efi     | vfat        |
+| 4 GB      | -             | linux swap  |
+| 32 GB     | /             | ext4        |
+| Rest      | /home         | ext4        |
 
 ### User Groups
 
 Put yourself in these groups:
 
 - **wheel**: Administrative privileges
-- **tty**: Access to TTY
-- **disk**: Disk management permissions
 - **audio**: Audio device access
 - **video**: Video device access
-- **storage**: Access to storage devices
-- **network**: Network access
-- **input**: Input device access
-- **plugdev**: Access to removable devices
 - **users**: General user group
 
 ### Services
@@ -42,14 +37,14 @@ Enable these services:
 ## Post installation
 1. Login as root and update system
 ```
-xbps-update -Syu
+xbps-install -Syu
 xbps-install -y git
 ```
 2. Clone this repo to /tmp
 ```
 cd /tmp
 git clone --depth 1 -q "https://github.com/YuuMurasaki/setup.git"
-cd setup
+cd setup/
 ```
 3. Run install-void.sh as root
 ```

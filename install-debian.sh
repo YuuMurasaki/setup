@@ -2,7 +2,7 @@
 
 # Update system
 sudo apt-get update && apt-get upgrade
-sudo apt-get install -y openssh-server
+sudo apt-get install -y openssh-server ffmpeg imagemagick
 
 # Fonts
 sudo apt-get install -y fonts-noto fonts-roboto fonts-firacode
