@@ -21,8 +21,7 @@ xbps-remove sudo
 xbps-remove -Oo
 
 printf "permit persist :wheel
-permit nopass :wheel cmd poweroff
-permit nopass :wheel cmd reboot
+permit nopass :wheel cmd shutdown
 permit nopass :wheel cmd mount
 permit nopass :wheel cmd umount" > /etc/doas.conf
 
