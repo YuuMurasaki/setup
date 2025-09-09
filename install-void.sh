@@ -27,7 +27,7 @@ xbps-install -y firefox keepassxc
 #xbps-install -y mesa-dri mesa-vulkan-intel mesa-vaapi mesa-vdpau
 #xbps-install -y slop shotgun xdg-user-dirs exfat-utils ripgrep
 
-xbps-remove -RFy acpid void-artwork oclock xbacklight xcalc xclock xeyes
+xbps-remove -RFy acpid void-artwork oclock xbacklight xcalc xclock xeyes xlogo
 xbps-remove -yOo
 
 cd /tmp
