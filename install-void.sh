@@ -1,9 +1,10 @@
 #!/bin/sh
 
 xbps-install -Syu
-xbps-install -y xorg-server xorg-apps xorg-input-drivers xorg-video-drivers
-xbps-install -y libX11-devel libXft-devel libXinerama-devel libXrandr-devel
-xbps-install -y base-devel ncurses-devel
+xbps-install -y xorg-server xorg-apps
+xbps-install -y xf86-input-evdev xf86-input-synaptics xf86-input-libinput
+xbps-install -y libX11-devel libXft-devel libXinerama-devel libXrandr-devel ncurses-devel
+xbps-install -y autoconf automake binutils bison flex gcc libtool m4 make patch pkg-config
 xbps-install -y dbus pam_rundir NetworkManager
 xbps-install -y pipewire wireplumber alsa-pipewire rtkit
 
@@ -15,15 +16,19 @@ xbps-install -y liberation-fonts-ttf font-libertine-ttf freefont-ttf
 
 xbps-install -y xcompmgr xclip xwallpaper unclutter-xfixes
 xbps-install -y curl ImageMagick ffmpeg opendoas
-xbps-install -y stow rsync tar zip unzip
+xbps-install -y stow rsync zip unzip xz
 xbps-install -y mpv nsxiv zathura zathura-pdf-poppler
-xbps-install -y tmux neovim lf fzf ripgrep
+xbps-install -y tmux neovim lf fzf
 
 xbps-install -y firefox keepassxc
 
-#xbps-install -y intel-video-accel vulkan-loader
+#xbps-install -y intel-video-accel vulkan-loader xorg-video-drivers
+#xbps-install -y xf86-video-intel
 #xbps-install -y mesa-dri mesa-vulkan-intel mesa-vaapi mesa-vdpau
-#xbps-install -y slop shotgun xdg-user-dirs exfat-utils
+#xbps-install -y slop shotgun xdg-user-dirs exfat-utils ripgrep
+
+xbps-remove -RFy acpid void-artwork oclock xbacklight xcalc xclock xeyes
+xbps-remove -yOo
 
 cd /tmp
 git clone --depth 1 --single-branch --no-tags -q "https://github.com/YuuMurasaki/st.git"
