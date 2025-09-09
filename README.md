@@ -12,8 +12,7 @@
 |-----------|---------------|-------------|
 | 512 MB    | /boot/efi     | vfat        |
 | 4 GB      | -             | linux swap  |
-| 32 GB     | /             | ext4        |
-| Rest      | /home         | ext4        |
+| Rest      | /             | ext4        |
 
 ### User Groups
 

@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Blacklist kernel module-------------------------------
-printf "blacklist uvcvideo
+echo "blacklist uvcvideo
 blacklist chsc_sch
 blacklist hisax
 blacklist i8xx_tco
@@ -15,19 +15,14 @@ install bluetooth /bin/true" > /etc/modprobe.d/blacklist.conf
 
 # Setup doas--------------------------------------------
 echo "Configuring doas..."
-
-printf "ignorepkg=sudo" > /etc/xbps.d/ignore.conf
-xbps-remove sudo
-xbps-remove -Oo
-
-printf "permit persist :wheel
+echo "permit persist :wheel
 permit nopass :wheel cmd shutdown
 permit nopass :wheel cmd mount
 permit nopass :wheel cmd umount" > /etc/doas.conf
 
 # Setup GRUB--------------------------------------------
 echo "Configuring GRUB..."
-printf 'GRUB_DEFAULT=0
+echo 'GRUB_DEFAULT=0
 GRUB_TIMEOUT=0
 GRUB_HIDDEN_TIMEOUT=0
 GRUB_CMDLINE_LINUX_DEFAULT="loglevel=4"' > /etc/default/grub
@@ -35,7 +30,7 @@ update-grub
 
 # Setup $XDG_RUNTIME_DIR--------------------------------
 echo "Setting up XDG_RUNTIME_DIR..."
-printf "-session	optional	pam_rundir.so" >> /etc/pam.d/login
+echo "-session	optional	pam_rundir.so" >> /etc/pam.d/login
 
 # Enable sv services------------------------------------
 echo "Removing existing services..."
