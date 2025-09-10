@@ -27,6 +27,7 @@ xbps-install -y firefox keepassxc
 #xbps-install -y mesa-dri mesa-vulkan-intel mesa-vaapi mesa-vdpau
 #xbps-install -y slop shotgun xdg-user-dirs exfat-utils ripgrep unclutter-xfixes
 
+xbps-remove -RFy linux-firmware-amd linux-firmware-nvidia
 xbps-remove -RFy acpid void-artwork oclock xbacklight xcalc xclock xeyes xlogo
 xbps-remove -yOo
 
