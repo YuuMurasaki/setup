@@ -14,7 +14,7 @@ xbps-install -y noto-fonts-ttf-extra noto-fonts-cjk-variable noto-fonts-ttf-vari
 xbps-install -y font-iosevka ttf-ubuntu-font-family font-awesome6
 xbps-install -y liberation-fonts-ttf font-libertine-ttf freefont-ttf
 
-xbps-install -y xcompmgr xclip xwallpaper unclutter-xfixes
+xbps-install -y xcompmgr xclip xwallpaper
 xbps-install -y curl ImageMagick ffmpeg opendoas
 xbps-install -y stow rsync zip unzip xz
 xbps-install -y mpv nsxiv zathura zathura-pdf-poppler
@@ -25,7 +25,7 @@ xbps-install -y firefox keepassxc
 #xbps-install -y intel-video-accel vulkan-loader xorg-video-drivers
 #xbps-install -y xf86-video-intel
 #xbps-install -y mesa-dri mesa-vulkan-intel mesa-vaapi mesa-vdpau
-#xbps-install -y slop shotgun xdg-user-dirs exfat-utils ripgrep
+#xbps-install -y slop shotgun xdg-user-dirs exfat-utils ripgrep unclutter-xfixes
 
 xbps-remove -RFy acpid void-artwork oclock xbacklight xcalc xclock xeyes xlogo
 xbps-remove -yOo
