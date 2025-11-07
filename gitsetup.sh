@@ -11,5 +11,6 @@ git config --global core.whitespace error
 git config --global color.ui auto
 git config --global diff.context 3
 git config --global init.defaultBranch master
+git config --global commit.template "/home/yuu/.config/git/commit-template"
 
 echo "Git configuration completed successfully."
