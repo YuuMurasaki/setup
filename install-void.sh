@@ -1,9 +1,8 @@
 #!/bin/sh
 
 xbps-install -Syu
-xbps-install -y xorg-server xorg-apps
-xbps-install -y xf86-input-evdev xf86-input-synaptics xf86-input-libinput
-xbps-install -y libX11-devel libXft-devel libXinerama-devel libXrandr-devel ncurses-devel
+xbps-install -y xorg-server xorg-apps xf86-input-libinput
+xbps-install -y libX11-devel libXft-devel libXrandr-devel ncurses-devel
 xbps-install -y autoconf automake binutils bison flex gcc libtool m4 make patch pkg-config
 xbps-install -y dbus pam_rundir NetworkManager
 xbps-install -y pipewire wireplumber alsa-pipewire rtkit
@@ -22,6 +21,7 @@ xbps-install -y tmux neovim lf fzf
 
 xbps-install -y firefox keepassxc
 
+#xbps-install -y xf86-input-evdev xf86-input-synaptics libXinerama-devel
 #xbps-install -y intel-video-accel vulkan-loader xorg-video-drivers
 #xbps-install -y xf86-video-intel
 #xbps-install -y mesa-dri mesa-vulkan-intel mesa-vaapi mesa-vdpau

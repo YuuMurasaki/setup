@@ -13,6 +13,8 @@ blacklist bluetooth
 
 install bluetooth /bin/true" > /etc/modprobe.d/blacklist.conf
 
+dracut -f
+
 # Setup doas--------------------------------------------
 echo "Configuring doas..."
 echo "permit persist :wheel
@@ -26,6 +28,7 @@ echo 'GRUB_DEFAULT=0
 GRUB_TIMEOUT=0
 GRUB_HIDDEN_TIMEOUT=0
 GRUB_CMDLINE_LINUX_DEFAULT="loglevel=4"' > /etc/default/grub
+
 update-grub
 
 # Setup $XDG_RUNTIME_DIR--------------------------------
@@ -53,10 +56,6 @@ ln -s /usr/share/examples/wireplumber/10-wireplumber.conf /etc/pipewire/pipewire
 ln -s /usr/share/examples/pipewire/20-pipewire-pulse.conf /etc/pipewire/pipewire.conf.d/
 ln -s /usr/share/alsa/alsa.conf.d/50-pipewire.conf /etc/alsa/conf.d
 ln -s /usr/share/alsa/alsa.conf.d/99-pipewire-default.conf /etc/alsa/conf.d
-
-# Setup /etc/hosts--------------------------------------
-echo "Configuring /etc/hosts"
-curl -sL "https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-porn-social/hosts" > /etc/hosts
 
 # Prevent login as root---------------------------------
 echo "Remove root password"
