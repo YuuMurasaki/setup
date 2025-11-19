@@ -8,10 +8,7 @@ blacklist i8xx_tco
 blacklist hisax_fcpcipnp
 blacklist snd_pcsp
 blacklist snd_hda_codec_hdmi
-blacklist pcspkr
-blacklist bluetooth
-
-install bluetooth /bin/true" > /etc/modprobe.d/blacklist.conf
+blacklist pcspkr" > /etc/modprobe.d/blacklist.conf
 
 dracut -f
 
@@ -56,7 +53,3 @@ ln -s /usr/share/examples/wireplumber/10-wireplumber.conf /etc/pipewire/pipewire
 ln -s /usr/share/examples/pipewire/20-pipewire-pulse.conf /etc/pipewire/pipewire.conf.d/
 ln -s /usr/share/alsa/alsa.conf.d/50-pipewire.conf /etc/alsa/conf.d
 ln -s /usr/share/alsa/alsa.conf.d/99-pipewire-default.conf /etc/alsa/conf.d
-
-# Prevent login as root---------------------------------
-echo "Remove root password"
-passwd -ld root
