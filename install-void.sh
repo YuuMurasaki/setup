@@ -1,10 +1,11 @@
 #!/bin/sh
 
 xbps-install -Syu
-xbps-install -y xorg-server xorg-apps xf86-input-libinput
+xbps-install -y xorg-server xorg-apps
+xbps-install -y xf86-input-libinput
 xbps-install -y libX11-devel libXft-devel libXrandr-devel ncurses-devel
 xbps-install -y autoconf automake binutils bison flex gcc libtool m4 make patch pkg-config
-xbps-install -y dbus pam_rundir NetworkManager
+xbps-install -y dbus pam_rundir
 xbps-install -y pipewire wireplumber alsa-pipewire rtkit
 
 xbps-install -y freetype-devel fontconfig-devel
@@ -22,11 +23,11 @@ xbps-install -y tmux neovim lf fzf
 xbps-install -y firefox keepassxc
 
 #xbps-install -y xf86-input-evdev xf86-input-synaptics libXinerama-devel
+#xbps-install -y mesa-dri mesa-vulkan-intel mesa-vaapi mesa-vdpau mesa-vulkan-nouveau
 #xbps-install -y intel-video-accel vulkan-loader xorg-video-drivers
 #xbps-install -y xf86-video-intel xf86-video-nouveau
-#xbps-install -y mesa-dri mesa-vulkan-intel mesa-vaapi mesa-vdpau mesa-vulkan-nouveau
-#xbps-install -y fwupd bolt
-#xbps-install -y ImageMagick slop shotgun xdg-user-dirs exfat-utils ripgrep unclutter-xfixes
+#xbps-install -y exfat-utils
+#xbps-install -y fwupd bolt NetworkManager ImageMagick slop shotgun xdg-user-dirs ripgrep unclutter-xfixes
 
 xbps-remove -RFy linux-firmware-amd linux-firmware-nvidia
 xbps-remove -RFy acpid void-artwork oclock xbacklight xcalc xclock xeyes xlogo
